@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="kicker">Reference tab</p>
+    <h1>Lore Atlas</h1>
+    <p>This mock screen represents the future lore lookup area that would ground the character builder in canon.</p>
+</section>
+
+<section class="panel-grid atlas-layout">
+    <div class="card-frame wide">
+        <!-- Tamriel map image: central visual on the Lore Atlas page to anchor the lore-reference experience.
+             It should function like a broad world map or regional chart that suggests navigation and discovery.
+             Recommended dimensions: 1600x1000 px, parchment texture, high readability, cartographic fantasy feel. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/tamriel-map-placeholder.webp') }}"
+             alt="Placeholder for Tamriel map artwork">
+    </div>
+    <article class="info-card">
+        <h2>Reference panes</h2>
+        <ul class="detail-list">
+            <li>Races and cultures</li>
+            <li>Factions and creeds</li>
+            <li>Provinces and cities</li>
+            <li>Key historical eras</li>
+        </ul>
+    </article>
+    <article class="info-card">
+        <h2>Future role</h2>
+        <p>In the real application, this area would surface lore snippets, summaries, and references while the user builds a character.</p>
+    </article>
+</section>
+{% endblock %}

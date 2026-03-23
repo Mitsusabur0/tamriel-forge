@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="kicker">Tab 1</p>
+    <h1>Character Forge</h1>
+    <p>This mock screen shows how the conversational intake experience could feel before any AI is wired in.</p>
+</section>
+
+<section class="panel-grid intake-layout">
+    <div class="info-card">
+        <h2>Prompt rail</h2>
+        <div class="mock-chat">
+            <div class="chat-bubble system">Tell me your character's race, homeland, and defining wound.</div>
+            <div class="chat-bubble user">A Dunmer exile from Vvardenfell seeking redemption.</div>
+            <div class="chat-bubble system">What faction, oath, or personal code guides them?</div>
+        </div>
+    </div>
+
+    <div class="card-frame tall">
+        <!-- Character portrait anchor image: right-hand visual on the Character Forge page to set tone while the user fills traits.
+             It should feel like concept art for a player character, waist-up or three-quarter composition.
+             Recommended dimensions: 900x1200 px, fantasy illustration style, dramatic rim light, strong facial readability. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/character-anchor-placeholder.avif') }}"
+             alt="Placeholder for character concept portrait">
+    </div>
+    <div class="info-card">
+        <h2>Collected traits</h2>
+        <ul class="detail-list">
+            <li>Race: Dunmer</li>
+            <li>Birthplace: Vvardenfell</li>
+            <li>Archetype: Pilgrim-blade</li>
+            <li>Conflict: Exile and guilt</li>
+            <li>Faction link: Tribunal remnants</li>
+        </ul>
+    </div>
+    <div class="info-card">
+        <h2>Interaction notes</h2>
+        <p>Future version: guided prompts, validation against lore, save states, and branching question flows.</p>
+    </div>
+</section>
+{% endblock %}

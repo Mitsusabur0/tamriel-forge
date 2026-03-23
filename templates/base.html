@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TamrielForge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand-block">
+                <p class="eyebrow">Lore-driven character creation mockup</p>
+                <a class="brand" href="{{ url_for('home') }}">TamrielForge</a>
+            </div>
+            <nav class="main-nav" aria-label="Primary">
+                <a class="{{ 'active' if active_page == 'home' else '' }}" href="{{ url_for('home') }}">Overview</a>
+                <a class="{{ 'active' if active_page == 'forge' else '' }}" href="{{ url_for('forge') }}">Character Forge</a>
+                <a class="{{ 'active' if active_page == 'backstory' else '' }}" href="{{ url_for('backstory') }}">Backstory</a>
+                <a class="{{ 'active' if active_page == 'portrait' else '' }}" href="{{ url_for('portrait') }}">Portrait</a>
+                <a class="{{ 'active' if active_page == 'voice' else '' }}" href="{{ url_for('voice') }}">Voice</a>
+                <a class="{{ 'active' if active_page == 'lore_atlas' else '' }}" href="{{ url_for('lore_atlas') }}">Lore Atlas</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

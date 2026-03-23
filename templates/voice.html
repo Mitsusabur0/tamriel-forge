@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="kicker">Tab 4</p>
+    <h1>Voice Narration</h1>
+    <p>This optional area previews how the audio narration module would be presented in the final product.</p>
+</section>
+
+<section class="panel-grid voice-layout">
+    <article class="info-card">
+        <h2>Playback mockup</h2>
+        <div class="audio-shell">
+            <div class="audio-bar"></div>
+            <div class="audio-meta">
+                <span>00:00</span>
+                <span>03:47</span>
+            </div>
+        </div>
+        <p>No real playback is implemented in this version.</p>
+    </article>
+
+    <div class="card-frame">
+        <!-- Narration ambience image: supporting visual on the Voice page to evoke spoken legend or bardic storytelling.
+             It should feel atmospheric rather than character-focused, with room for the audio controls nearby.
+             Recommended dimensions: 1400x900 px, moody tavern or hall scene, amber light, storybook atmosphere. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/narration-ambience-placeholder.jpg') }}"
+             alt="Placeholder for narration ambience scene">
+    </div>
+    <article class="info-card">
+        <h2>Future options</h2>
+        <ul class="detail-list">
+            <li>Voice style selection</li>
+            <li>Reading pace control</li>
+            <li>Ambient music toggle</li>
+            <li>Download narration</li>
+        </ul>
+    </article>
+</section>
+{% endblock %}

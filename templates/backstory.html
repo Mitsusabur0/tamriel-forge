@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="kicker">Tab 2</p>
+    <h1>Backstory Draft</h1>
+    <p>This page previews where the final literary character origin would be displayed and refined.</p>
+</section>
+
+<section class="panel-grid story-layout">
+    <article class="info-card prose-card">
+        <h2>Generated narrative preview</h2>
+        <p>
+            Born beneath the red glow of Vvardenfell, the exile learned early that ash remembers every
+            trespass. The road ahead would one day carry them from temple shadow to borderland ruin...
+        </p>
+        <p>
+            This is intentionally static placeholder text. In the real product, the content would be a lore-aware
+            origin story assembled from the character profile.
+        </p>
+    </article>
+
+    <aside class="card-frame">
+        <!-- Manuscript support image: narrow artwork beside the prose panel on the Backstory page.
+             It should reinforce the literary tone with Elder Scrolls ambience such as candles, tomes, or ancestral halls.
+             Recommended dimensions: 1000x1400 px, vertical composition, warm interior lighting, textured and contemplative feel. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/manuscript-scene-placeholder.jpg') }}"
+             alt="Placeholder for lore manuscript ambience artwork">
+    </aside>
+    <article class="info-card">
+        <h2>Future controls</h2>
+        <ul class="detail-list">
+            <li>Regenerate tone</li>
+            <li>Switch perspective</li>
+            <li>Expand childhood arc</li>
+            <li>Export as character sheet</li>
+        </ul>
+    </article>
+</section>
+{% endblock %}

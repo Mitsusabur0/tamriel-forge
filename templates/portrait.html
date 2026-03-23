@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="kicker">Tab 3</p>
+    <h1>Portrait Gallery</h1>
+    <p>This tab demonstrates where generated character art options would be displayed.</p>
+</section>
+
+<section class="panel-grid gallery-layout">
+    <div class="card-frame">
+        <!-- Primary portrait image: first gallery slot on the Portrait page for the best final character render.
+             It should present the character clearly and heroically as the main deliverable image.
+             Recommended dimensions: 1024x1536 px, polished fantasy illustration, crisp focal point, premium key art feel. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-primary-placeholder.jpg') }}"
+             alt="Placeholder for primary character portrait">
+    </div>
+    <div class="card-frame">
+        <!-- Alternate portrait image: second gallery slot on the Portrait page for a stylistic or pose variation.
+             It should feel related to the main portrait while offering a different mood or camera angle.
+             Recommended dimensions: 1024x1536 px, same character identity, cooler lighting or alternate background. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-variant-placeholder.jpg') }}"
+             alt="Placeholder for alternate character portrait">
+    </div>
+    <article class="info-card">
+        <h2>Art direction panel</h2>
+        <p>Future version: aspect ratio controls, prompt refinements, reroll history, and favorites selection.</p>
+    </article>
+</section>
+{% endblock %}

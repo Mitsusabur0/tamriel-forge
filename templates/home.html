@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel">
+    <div class="hero-copy">
+        <p class="kicker">Stage 0 demo</p>
+        <h1>Build a hero worthy of the songs of Tamriel.</h1>
+        <p class="lede">
+            This first version is a visual mockup for the course project. It shows the product flow,
+            navigation, and visual language without implementing AI, APIs, or real generation logic.
+        </p>
+        <div class="button-row">
+            <a class="button primary" href="{{ url_for('forge') }}">Enter Character Forge</a>
+            <a class="button secondary" href="{{ url_for('lore_atlas') }}">Open Lore Atlas</a>
+        </div>
+    </div>
+    <div class="hero-visual card-frame">
+        <!-- Hero banner image: wide landing visual placed on the right side of the overview page.
+             It should feel cinematic and mythic, showing an Elder Scrolls-inspired landscape or ruins.
+             Recommended dimensions: 1600x900 px, with soft fog, warm gold highlights, and space for the frame crop. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/hero-banner-placeholder.jpg') }}"
+             alt="Placeholder for TamrielForge hero banner artwork">
+    </div>
+</section>
+
+<section class="panel-grid three-up">
+    <article class="info-card">
+        <h2>1. Converse</h2>
+        <p>Mock interview flow for race, homeland, faction ties, and temperament.</p>
+    </article>
+    <article class="info-card">
+        <h2>2. Write</h2>
+        <p>Backstory presentation tab for the polished prose version of the character origin.</p>
+    </article>
+    <article class="info-card">
+        <h2>3. Visualize</h2>
+        <p>Portrait gallery tab for fantasy illustration results and mood variations.</p>
+    </article>
+</section>
+
+<section class="feature-band">
+    <div class="card-frame">
+        <!-- Province collage image: supporting overview artwork placed on the lower left of the home page.
+             It should communicate breadth of worldbuilding with recognizable Tamriel regions or landmarks.
+             Recommended dimensions: 1200x900 px, painterly style, readable silhouettes, muted parchment palette. -->
+        <img src="{{ url_for('static', filename='images/elder_scrolls/province-collage-placeholder.jpg') }}"
+             alt="Placeholder for Tamriel province collage artwork">
+    </div>
+    <div class="feature-copy">
+        <h2>The product flow in one glance</h2>
+        <p>
+            The mockup is organized around the same four-step pipeline described in the assignment:
+            conversation, backstory generation, portrait creation, and optional voice narration.
+        </p>
+        <p>
+            Each tab is present so the final app structure feels tangible from the start, even while the
+            internals remain placeholders.
+        </p>
+    </div>
+</section>
+{% endblock %}
