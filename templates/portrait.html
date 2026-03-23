@@ -2,9 +2,9 @@
 
 {% block content %}
 <section class="page-intro">
-    <p class="kicker">Tab 3</p>
-    <h1>Portrait Gallery</h1>
-    <p>This tab demonstrates where generated character art options would be displayed.</p>
+    <p class="kicker">Pestaña 3</p>
+    <h1>Galería de Retratos</h1>
+    <p>Esta pestaña demuestra dónde se mostrarían las opciones de arte generado del personaje.</p>
 </section>
 
 <section class="panel-grid gallery-layout">
@@ -13,18 +13,18 @@
              It should present the character clearly and heroically as the main deliverable image.
              Recommended dimensions: 1024x1536 px, polished fantasy illustration, crisp focal point, premium key art feel. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-primary-placeholder.jpg') }}"
-             alt="Placeholder for primary character portrait">
+             alt="Placeholder para el retrato principal del personaje">
     </div>
     <div class="card-frame">
         <!-- Alternate portrait image: second gallery slot on the Portrait page for a stylistic or pose variation.
              It should feel related to the main portrait while offering a different mood or camera angle.
              Recommended dimensions: 1024x1536 px, same character identity, cooler lighting or alternate background. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-variant-placeholder.jpg') }}"
-             alt="Placeholder for alternate character portrait">
+             alt="Placeholder para la variante de retrato del personaje">
     </div>
     <article class="info-card">
-        <h2>Art direction panel</h2>
-        <p>Future version: aspect ratio controls, prompt refinements, reroll history, and favorites selection.</p>
+        <h2>Panel de dirección de arte</h2>
+        <p>Versión futura: controles de relación de aspecto, refinamientos del prompt, historial de rerolls y selección de favoritos.</p>
     </article>
 </section>
 {% endblock %}

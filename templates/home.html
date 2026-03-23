@@ -3,15 +3,15 @@
 {% block content %}
 <section class="hero-panel">
     <div class="hero-copy">
-        <p class="kicker">Stage 0 demo</p>
-        <h1>Build a hero worthy of the songs of Tamriel.</h1>
+        <p class="kicker">Demo etapa 0</p>
+        <h1>Forja un héroe digno de las canciones de Tamriel.</h1>
         <p class="lede">
-            This first version is a visual mockup for the course project. It shows the product flow,
-            navigation, and visual language without implementing AI, APIs, or real generation logic.
+            Esta primera versión es una maqueta visual para el proyecto del curso. Muestra el flujo del producto,
+            la navegación y el lenguaje visual sin implementar IA, APIs ni lógica real de generación.
         </p>
         <div class="button-row">
-            <a class="button primary" href="{{ url_for('forge') }}">Enter Character Forge</a>
-            <a class="button secondary" href="{{ url_for('lore_atlas') }}">Open Lore Atlas</a>
+            <a class="button primary" href="{{ url_for('forge') }}">Entrar a la Forja de Personaje</a>
+            <a class="button secondary" href="{{ url_for('lore_atlas') }}">Abrir Atlas del Lore</a>
         </div>
     </div>
     <div class="hero-visual card-frame">
@@ -19,22 +19,22 @@
              It should feel cinematic and mythic, showing an Elder Scrolls-inspired landscape or ruins.
              Recommended dimensions: 1600x900 px, with soft fog, warm gold highlights, and space for the frame crop. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/hero-banner-placeholder.jpg') }}"
-             alt="Placeholder for TamrielForge hero banner artwork">
+             alt="Placeholder para la ilustración principal de TamrielForge">
     </div>
 </section>
 
 <section class="panel-grid three-up">
     <article class="info-card">
-        <h2>1. Converse</h2>
-        <p>Mock interview flow for race, homeland, faction ties, and temperament.</p>
+        <h2>1. Conversa</h2>
+        <p>Flujo de entrevista simulado para raza, lugar de origen, vínculos con facciones y temperamento.</p>
     </article>
     <article class="info-card">
-        <h2>2. Write</h2>
-        <p>Backstory presentation tab for the polished prose version of the character origin.</p>
+        <h2>2. Escribe</h2>
+        <p>Pestaña de presentación del trasfondo para la versión en prosa pulida del origen del personaje.</p>
     </article>
     <article class="info-card">
-        <h2>3. Visualize</h2>
-        <p>Portrait gallery tab for fantasy illustration results and mood variations.</p>
+        <h2>3. Visualiza</h2>
+        <p>Pestaña de galería de retratos para los resultados de ilustración fantástica y sus variaciones de atmósfera.</p>
     </article>
 </section>
 
@@ -44,17 +44,17 @@
              It should communicate breadth of worldbuilding with recognizable Tamriel regions or landmarks.
              Recommended dimensions: 1200x900 px, painterly style, readable silhouettes, muted parchment palette. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/province-collage-placeholder.jpg') }}"
-             alt="Placeholder for Tamriel province collage artwork">
+             alt="Placeholder para el collage de provincias de Tamriel">
     </div>
     <div class="feature-copy">
-        <h2>The product flow in one glance</h2>
+        <h2>El flujo del producto de un vistazo</h2>
         <p>
-            The mockup is organized around the same four-step pipeline described in the assignment:
-            conversation, backstory generation, portrait creation, and optional voice narration.
+            La maqueta está organizada en torno al mismo pipeline de cuatro etapas descrito en el encargo:
+            conversación, generación de trasfondo, creación de retrato y narración de voz opcional.
         </p>
         <p>
-            Each tab is present so the final app structure feels tangible from the start, even while the
-            internals remain placeholders.
+            Cada pestaña está presente para que la estructura final de la app se sienta tangible desde el inicio, incluso mientras la
+            lógica interna siga siendo placeholders.
         </p>
     </div>
 </section>

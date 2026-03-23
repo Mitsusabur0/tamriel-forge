@@ -2,18 +2,18 @@
 
 {% block content %}
 <section class="page-intro">
-    <p class="kicker">Tab 1</p>
-    <h1>Character Forge</h1>
-    <p>This mock screen shows how the conversational intake experience could feel before any AI is wired in.</p>
+    <p class="kicker">Pestaña 1</p>
+    <h1>Forja de Personaje</h1>
+    <p>Esta pantalla de maqueta muestra cómo podría sentirse la experiencia conversacional de recopilación antes de conectar cualquier IA.</p>
 </section>
 
 <section class="panel-grid intake-layout">
     <div class="info-card">
-        <h2>Prompt rail</h2>
+        <h2>Flujo de prompts</h2>
         <div class="mock-chat">
-            <div class="chat-bubble system">Tell me your character's race, homeland, and defining wound.</div>
-            <div class="chat-bubble user">A Dunmer exile from Vvardenfell seeking redemption.</div>
-            <div class="chat-bubble system">What faction, oath, or personal code guides them?</div>
+            <div class="chat-bubble system">Cuéntame la raza de tu personaje, su tierra natal y la herida que lo define.</div>
+            <div class="chat-bubble user">Un exiliado Dunmer de Vvardenfell que busca redención.</div>
+            <div class="chat-bubble system">¿Qué facción, juramento o código personal lo guía?</div>
         </div>
     </div>
 
@@ -22,21 +22,21 @@
              It should feel like concept art for a player character, waist-up or three-quarter composition.
              Recommended dimensions: 900x1200 px, fantasy illustration style, dramatic rim light, strong facial readability. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/character-anchor-placeholder.avif') }}"
-             alt="Placeholder for character concept portrait">
+             alt="Placeholder para el retrato conceptual del personaje">
     </div>
     <div class="info-card">
-        <h2>Collected traits</h2>
+        <h2>Rasgos recopilados</h2>
         <ul class="detail-list">
-            <li>Race: Dunmer</li>
-            <li>Birthplace: Vvardenfell</li>
-            <li>Archetype: Pilgrim-blade</li>
-            <li>Conflict: Exile and guilt</li>
-            <li>Faction link: Tribunal remnants</li>
+            <li>Raza: Dunmer</li>
+            <li>Lugar de nacimiento: Vvardenfell</li>
+            <li>Arquetipo: Peregrino de la hoja</li>
+            <li>Conflicto: Exilio y culpa</li>
+            <li>Vínculo con facción: Remanentes del Tribunal</li>
         </ul>
     </div>
     <div class="info-card">
-        <h2>Interaction notes</h2>
-        <p>Future version: guided prompts, validation against lore, save states, and branching question flows.</p>
+        <h2>Notas de interacción</h2>
+        <p>Versión futura: prompts guiados, validación contra el lore, estados de guardado y flujos ramificados de preguntas.</p>
     </div>
 </section>
 {% endblock %}

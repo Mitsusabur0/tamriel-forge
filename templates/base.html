@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,16 +13,16 @@
     <div class="page-shell">
         <header class="site-header">
             <div class="brand-block">
-                <p class="eyebrow">Lore-driven character creation mockup</p>
+                <p class="eyebrow">Maqueta de creación de personajes guiada por el lore</p>
                 <a class="brand" href="{{ url_for('home') }}">TamrielForge</a>
             </div>
-            <nav class="main-nav" aria-label="Primary">
-                <a class="{{ 'active' if active_page == 'home' else '' }}" href="{{ url_for('home') }}">Overview</a>
-                <a class="{{ 'active' if active_page == 'forge' else '' }}" href="{{ url_for('forge') }}">Character Forge</a>
-                <a class="{{ 'active' if active_page == 'backstory' else '' }}" href="{{ url_for('backstory') }}">Backstory</a>
-                <a class="{{ 'active' if active_page == 'portrait' else '' }}" href="{{ url_for('portrait') }}">Portrait</a>
-                <a class="{{ 'active' if active_page == 'voice' else '' }}" href="{{ url_for('voice') }}">Voice</a>
-                <a class="{{ 'active' if active_page == 'lore_atlas' else '' }}" href="{{ url_for('lore_atlas') }}">Lore Atlas</a>
+            <nav class="main-nav" aria-label="Principal">
+                <a class="{{ 'active' if active_page == 'home' else '' }}" href="{{ url_for('home') }}">Vista general</a>
+                <a class="{{ 'active' if active_page == 'forge' else '' }}" href="{{ url_for('forge') }}">Forja de Personaje</a>
+                <a class="{{ 'active' if active_page == 'backstory' else '' }}" href="{{ url_for('backstory') }}">Trasfondo</a>
+                <a class="{{ 'active' if active_page == 'portrait' else '' }}" href="{{ url_for('portrait') }}">Retrato</a>
+                <a class="{{ 'active' if active_page == 'voice' else '' }}" href="{{ url_for('voice') }}">Voz</a>
+                <a class="{{ 'active' if active_page == 'lore_atlas' else '' }}" href="{{ url_for('lore_atlas') }}">Atlas del Lore</a>
             </nav>
         </header>
 
