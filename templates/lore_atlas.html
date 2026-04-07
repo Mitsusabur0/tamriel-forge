@@ -2,9 +2,9 @@
 
 {% block content %}
 <section class="page-intro">
-    <p class="kicker">Pestaña de referencia</p>
-    <h1>Atlas del Lore</h1>
-    <p>Esta pantalla de maqueta representa la futura área de consulta de lore que anclaría la creación de personajes en el canon.</p>
+    <p class="kicker">Reference</p>
+    <h1>Lore Atlas</h1>
+    <p>Browse the places, peoples, factions, and historical context that can anchor each character more firmly in the world.</p>
 </section>
 
 <section class="panel-grid atlas-layout">
@@ -13,20 +13,20 @@
              It should function like a broad world map or regional chart that suggests navigation and discovery.
              Recommended dimensions: 1600x1000 px, parchment texture, high readability, cartographic fantasy feel. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/tamriel-map-placeholder.webp') }}"
-             alt="Placeholder para la ilustración del mapa de Tamriel">
+             alt="Map of Tamriel">
     </div>
     <article class="info-card">
-        <h2>Paneles de referencia</h2>
+        <h2>Reference panels</h2>
         <ul class="detail-list">
-            <li>Razas y culturas</li>
-            <li>Facciones y credos</li>
-            <li>Provincias y ciudades</li>
-            <li>Eras históricas clave</li>
+            <li>Races and cultures</li>
+            <li>Factions and creeds</li>
+            <li>Provinces and cities</li>
+            <li>Key historical eras</li>
         </ul>
     </article>
     <article class="info-card">
-        <h2>Rol futuro</h2>
-        <p>En la aplicación real, esta área mostraría fragmentos de lore, resúmenes y referencias mientras el usuario construye un personaje.</p>
+        <h2>Role in the app</h2>
+        <p>This area can surface lore excerpts, concise summaries, and supporting references while the user builds a character.</p>
     </article>
 </section>
 {% endblock %}

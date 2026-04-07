@@ -1,61 +1,122 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero-panel">
-    <div class="hero-copy">
-        <p class="kicker">Demo etapa 0</p>
-        <h1>Forja un héroe digno de las canciones de Tamriel.</h1>
-        <p class="lede">
-            Esta primera versión es una maqueta visual para el proyecto del curso. Muestra el flujo del producto,
-            la navegación y el lenguaje visual sin implementar IA, APIs ni lógica real de generación.
-        </p>
-        <div class="button-row">
-            <a class="button primary" href="{{ url_for('forge') }}">Entrar a la Forja de Personaje</a>
-            <a class="button secondary" href="{{ url_for('lore_atlas') }}">Abrir Atlas del Lore</a>
+<section class="hero-section home-image-section">
+    <!-- Hero image: panoramic landing artwork that introduces TamrielForge at a glance.
+         Aim for a sweeping Elder Scrolls-inspired vista with ruins, atmospheric fog, and room for centered text overlay.
+         Recommended dimensions: 1800x1000 px, wide composition, strong depth, balanced dark/light contrast. -->
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/hero-banner-placeholder.jpg') }}"
+         alt="TamrielForge hero landscape">
+    <div class="section-overlay"></div>
+    <div class="section-shell hero-shell">
+        <div class="hero-copy">
+            <p class="kicker">TamrielForge</p>
+            <h1>Hello, traveler.</h1>
+            <p class="lede">
+                The roads have led you to a curious quarter of the realm, where heroes are introduced by
+                firelight, their deeds copied into vellum, their likeness painted in rich oils, and their
+                voices carried into the rafters by patient bards.
+            </p>
+            <div class="button-row hero-actions">
+                <a class="button primary" href="{{ url_for('forge') }}">Enter the Tavern of Heroes</a>
+                <a class="button secondary" href="{{ url_for('lore_atlas') }}">Visit the Atlas of Realms</a>
+            </div>
         </div>
     </div>
-    <div class="hero-visual card-frame">
-        <!-- Hero banner image: wide landing visual placed on the right side of the overview page.
-             It should feel cinematic and mythic, showing an Elder Scrolls-inspired landscape or ruins.
-             Recommended dimensions: 1600x900 px, with soft fog, warm gold highlights, and space for the frame crop. -->
-        <img src="{{ url_for('static', filename='images/elder_scrolls/hero-banner-placeholder.jpg') }}"
-             alt="Placeholder para la ilustración principal de TamrielForge">
+</section>
+
+<section class="immersive-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/character-anchor-placeholder.avif') }}"
+         alt="Character creation scene">
+    <div class="section-overlay"></div>
+    <div class="section-shell split-shell split-left">
+        <div class="section-copy">
+            <p class="kicker">Tavern of Heroes</p>
+            <h2><a class="section-link" href="{{ url_for('forge') }}">Begin where all good legends begin: in a loud hall with a warm hearth.</a></h2>
+            <p>
+                Come, take a seat among mercenaries, pilgrims, and mystery-bound wanderers. The keepers of this tavern
+                will ask after your hero's homeland, scars, loyalties, and secret burdens until a worthy soul stands before us.
+            </p>
+            <p>
+                Speak plainly, traveler. The fire listens well, and first impressions in this house are known to last for ages.
+            </p>
+        </div>
     </div>
 </section>
 
-<section class="panel-grid three-up">
-    <article class="info-card">
-        <h2>1. Conversa</h2>
-        <p>Flujo de entrevista simulado para raza, lugar de origen, vínculos con facciones y temperamento.</p>
-    </article>
-    <article class="info-card">
-        <h2>2. Escribe</h2>
-        <p>Pestaña de presentación del trasfondo para la versión en prosa pulida del origen del personaje.</p>
-    </article>
-    <article class="info-card">
-        <h2>3. Visualiza</h2>
-        <p>Pestaña de galería de retratos para los resultados de ilustración fantástica y sus variaciones de atmósfera.</p>
-    </article>
+<section class="immersive-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/manuscript-scene-placeholder.jpg') }}"
+         alt="Backstory manuscript ambience">
+    <div class="section-overlay light"></div>
+    <div class="section-shell split-shell split-right">
+        <div class="section-copy section-copy-light">
+            <p class="kicker">Monks' Scriptorium</p>
+            <h2><a class="section-link light" href="{{ url_for('backstory') }}">Seek the scribes, for they keep the latest manuscript of every soul worth remembering.</a></h2>
+            <p>
+                Beyond these doors, ink-stained monks bend over long tables and turn rumor into record.
+                Bring them the bones of a life, and they will return a chronicle fit for a court archive or a campfire confession.
+            </p>
+            <p>
+                If the tale rings false, ask for a fresh draft. The brothers are patient, though they do sigh when made to scrape clean good parchment.
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="feature-band">
-    <div class="card-frame">
-        <!-- Province collage image: supporting overview artwork placed on the lower left of the home page.
-             It should communicate breadth of worldbuilding with recognizable Tamriel regions or landmarks.
-             Recommended dimensions: 1200x900 px, painterly style, readable silhouettes, muted parchment palette. -->
-        <img src="{{ url_for('static', filename='images/elder_scrolls/province-collage-placeholder.jpg') }}"
-             alt="Placeholder para el collage de provincias de Tamriel">
+<section class="immersive-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/portrait-primary-placeholder.jpg') }}"
+         alt="Primary character portrait">
+    <div class="section-overlay"></div>
+    <div class="section-shell split-shell split-left">
+        <div class="section-copy">
+            <p class="kicker">Painters' Atelier</p>
+            <h2><a class="section-link" href="{{ url_for('portrait') }}">When the face must be remembered, the painters will see to it.</a></h2>
+            <p>
+                Here work the portraitists of princes, thieves, and saints alike. They know the language of scars,
+                armor, posture, velvet, ash, and moonlight, and they will set your hero upon the canvas in whatever mood the tale demands.
+            </p>
+            <p>
+                Stand still if you can. Artists are temperamental folk, and some charge extra for heroes who insist on smoldering dramatically.
+            </p>
+        </div>
     </div>
-    <div class="feature-copy">
-        <h2>El flujo del producto de un vistazo</h2>
-        <p>
-            La maqueta está organizada en torno al mismo pipeline de cuatro etapas descrito en el encargo:
-            conversación, generación de trasfondo, creación de retrato y narración de voz opcional.
-        </p>
-        <p>
-            Cada pestaña está presente para que la estructura final de la app se sienta tangible desde el inicio, incluso mientras la
-            lógica interna siga siendo placeholders.
-        </p>
+</section>
+
+<section class="immersive-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/narration-ambience-placeholder.jpg') }}"
+         alt="Narration ambience scene">
+    <div class="section-overlay"></div>
+    <div class="section-shell split-shell split-right">
+        <div class="section-copy">
+            <p class="kicker">Bards' Hall</p>
+            <h2><a class="section-link" href="{{ url_for('voice') }}">Come to the hall where old voices give breath to rising legends.</a></h2>
+            <p>
+                The bards gather here beneath carved beams to rehearse victories, vows, betrayals, and last stands.
+                Place your story in their hands, and they will send it back to you wrapped in cadence, echo, and just enough thunder.
+            </p>
+            <p>
+                Do not forget to tip them. A bard who feels appreciated can make even a brooding exile sound ten feet tall.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="immersive-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/tamriel-map-placeholder.webp') }}"
+         alt="Map of Tamriel">
+    <div class="section-overlay light"></div>
+    <div class="section-shell split-shell split-left">
+        <div class="section-copy section-copy-light">
+            <p class="kicker">Atlas of Realms</p>
+            <h2><a class="section-link light" href="{{ url_for('lore_atlas') }}">And when memory falters, the archivists will show you the shape of the world.</a></h2>
+            <p>
+                Shelves groan beneath maps, family lines, faction rolls, and brittle accounts of ancient troubles.
+                Wander here whenever your hero needs firmer roots, truer borders, or the name of an old oath no one dares break lightly.
+            </p>
+            <p>
+                Mind the dust. The archivists insist it is historically significant.
+            </p>
+        </div>
     </div>
 </section>
 {% endblock %}
