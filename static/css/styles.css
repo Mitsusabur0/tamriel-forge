@@ -26,6 +26,13 @@ body {
         linear-gradient(180deg, #16181d 0%, #08090b 50%, #040506 100%);
 }
 
+body.forge-page {
+    background:
+        linear-gradient(rgba(10, 12, 15, 0.34), rgba(10, 12, 15, 0.56)),
+        url("/static/images/elder_scrolls/manuscript-scene-placeholder.webp") center center / cover fixed no-repeat;
+    overflow-x: hidden;
+}
+
 img {
     display: block;
     width: 100%;
@@ -110,7 +117,7 @@ h3 {
     padding-bottom: 4rem;
 }
 
-.site-main > section:not(.hero-section):not(.immersive-section):not(.overview-band) {
+.site-main > section:not(.hero-section):not(.immersive-section):not(.overview-band):not(.page-hero-section):not(.tavern-stage) {
     width: var(--content-width);
     margin: 1.5rem auto 0;
 }
@@ -276,13 +283,15 @@ h3 {
 
 .hero-section,
 .immersive-section,
+.page-hero-section,
 .overview-band {
     width: 100%;
     position: relative;
 }
 
 .hero-section,
-.immersive-section {
+.immersive-section,
+.page-hero-section {
     min-height: 34rem;
     overflow: hidden;
 }
@@ -320,6 +329,16 @@ h3 {
     z-index: 1;
 }
 
+.page-hero-shell {
+    min-height: 30rem;
+    display: grid;
+    align-items: center;
+}
+
+.page-hero-shell-right {
+    justify-items: end;
+}
+
 .hero-shell {
     min-height: 41rem;
     display: grid;
@@ -327,7 +346,8 @@ h3 {
     text-align: center;
 }
 
-.hero-copy {
+.hero-copy,
+.page-hero-copy {
     max-width: 50rem;
     padding: 4rem 0;
 }
@@ -338,12 +358,36 @@ h3 {
     color: #d9e1ec;
 }
 
+.page-hero-copy .kicker {
+    color: #d9e1ec;
+}
+
 .hero-copy h1 {
     text-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
 }
 
+.page-hero-copy h1 {
+    margin: 0.25rem 0 0.7rem;
+    font-size: clamp(2.3rem, 5vw, 4.2rem);
+    line-height: 1.06;
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.page-subhead {
+    margin: -0.1rem 0 1rem;
+    font-family: "Cinzel", serif;
+    font-size: clamp(1.15rem, 2.3vw, 1.7rem);
+    line-height: 1.3;
+    color: #d7dde6;
+}
+
 .hero-copy .lede {
     color: #d7dde6;
+}
+
+.page-hero-copy .lede {
+    color: #d7dde6;
+    max-width: 42rem;
 }
 
 .hero-actions {
@@ -431,12 +475,335 @@ h3 {
 
 .section-copy-light,
 .section-copy-light p,
-.section-copy-light h2 {
+.section-copy-light h2,
+.page-hero-copy-light,
+.page-hero-copy-light .page-subhead,
+.page-hero-copy-light .lede,
+.page-hero-copy-light h1 {
     color: #0f1216;
 }
 
-.section-copy-light .kicker {
+.section-copy-light .kicker,
+.page-hero-copy-light .kicker {
     color: #516074;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.tavern-stage {
+    width: 100%;
+    padding: 0.65rem 0 0;
+    overflow-x: clip;
+}
+
+.tavern-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(25rem, 0.92fr);
+    gap: 1.75rem;
+    align-items: start;
+    padding: 0 0.85rem;
+    min-height: calc(100vh - 9rem);
+}
+
+.tavern-chat-panel {
+    min-height: calc(100vh - 9rem);
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    padding: 0.65rem;
+    border: 1px solid rgba(8, 8, 8, 0.82);
+    border-radius: 0;
+    background: rgba(17, 19, 23, 0.72);
+    box-shadow: none;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.tavern-panel-head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 0.6rem;
+    padding: 0 0.35rem;
+}
+
+.tavern-panel-title {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.tavern-panel-head h1,
+.tavern-intro-card h2,
+.tavern-summary-head h2 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+}
+
+.tavern-panel-head h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: var(--text);
+    text-transform: none;
+}
+
+.tavern-intro-card h2,
+.tavern-summary-head h2 {
+    font-size: clamp(1.35rem, 2vw, 2.1rem);
+    color: var(--text);
+}
+
+.tavern-status {
+    margin: 0;
+    color: rgba(236, 232, 223, 0.76);
+    font-size: 0.92rem;
+    text-align: left;
+    max-width: 30rem;
+}
+
+.tavern-panel-actions {
+    align-self: center;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    justify-items: start;
+    gap: 0.75rem;
+}
+
+.tavern-transcript {
+    min-height: 0;
+    height: 100%;
+    padding: 1.6rem;
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    overflow-y: auto;
+    border: 2px solid rgba(8, 8, 8, 0.82);
+    border-radius: 0;
+    background:
+        linear-gradient(180deg, rgba(27, 19, 18, 0.52), rgba(11, 13, 17, 0.82)),
+        rgba(16, 18, 22, 0.58);
+    scrollbar-color: rgba(230, 222, 213, 0.35) rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(3px);
+}
+
+.tavern-message {
+    max-width: min(42rem, 80%);
+    padding: 0.95rem 1.15rem;
+    border-radius: 1.4rem;
+    border: 2px solid rgba(17, 17, 17, 0.92);
+    box-shadow: none;
+}
+
+.tavern-message.assistant {
+    justify-self: start;
+    background: rgba(26, 22, 20, 0.72);
+    color: var(--text);
+    position: relative;
+}
+
+.tavern-message.assistant::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    bottom: -0.95rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: rgba(26, 22, 20, 0.72);
+    border-right: 2px solid rgba(17, 17, 17, 0.92);
+    border-bottom: 2px solid rgba(17, 17, 17, 0.92);
+    transform: rotate(45deg);
+}
+
+.tavern-message.user {
+    justify-self: end;
+    max-width: min(30rem, 80%);
+    text-align: left;
+    background: rgba(74, 41, 31, 0.78);
+    border-radius: 1.4rem;
+}
+
+.tavern-message.error {
+    border-color: rgba(163, 47, 36, 0.8);
+    background: rgba(255, 224, 220, 0.72);
+}
+
+.tavern-message-meta {
+    margin-bottom: 0.45rem;
+    color: #e3ccb0;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.tavern-message-body {
+    color: #f5efe6;
+    line-height: 1.65;
+    white-space: pre-wrap;
+}
+
+.tavern-composer {
+    margin-top: 1.15rem;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.tavern-composer textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 7.5rem;
+    padding: 1.15rem 1.2rem;
+    border: 2px solid rgba(17, 17, 17, 0.82);
+    border-radius: 0;
+    background: rgba(8, 10, 14, 0.72);
+    color: var(--text);
+    font: inherit;
+    line-height: 1.55;
+    box-shadow: none;
+    backdrop-filter: blur(3px);
+}
+
+.tavern-composer textarea:focus {
+    outline: none;
+    border-color: rgba(17, 17, 17, 1);
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.tavern-composer textarea:disabled,
+.button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.tavern-composer-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 0.15rem;
+}
+
+.tavern-composer-foot p {
+    margin: 0;
+    color: rgba(236, 232, 223, 0.76);
+    font-size: 0.92rem;
+}
+
+.tavern-sidebar {
+    min-height: calc(100vh - 9rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "intro"
+        "summary";
+    gap: 1.4rem;
+    align-content: start;
+}
+
+.tavern-intro-card,
+.tavern-summary-panel {
+    border: 1px solid rgba(8, 8, 8, 0.82);
+    border-radius: 0;
+    background: rgba(17, 19, 23, 0.68);
+    box-shadow: none;
+    backdrop-filter: blur(5px);
+}
+
+.tavern-intro-card {
+    grid-area: intro;
+    padding: 2rem 2.1rem;
+}
+
+.tavern-intro-copy p {
+    margin: 0.6rem 0 0;
+    color: var(--muted);
+}
+
+.tavern-actions {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.tavern-actions .button {
+    min-width: 13rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.tavern-summary-panel {
+    grid-area: summary;
+    min-height: min(48rem, calc(100vh - 16rem));
+    padding: 2rem 1.75rem 1.35rem;
+}
+
+.tavern-summary-head {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tavern-summary {
+    position: relative;
+    padding: 0.1rem 0 0;
+    max-height: calc(100vh - 20rem);
+    overflow-y: auto;
+    scrollbar-color: rgba(230, 222, 213, 0.35) rgba(255, 255, 255, 0.03);
+}
+
+.tavern-summary-columns {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.2rem;
+}
+
+.tavern-summary-columns::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: rgba(223, 201, 171, 0.3);
+}
+
+.tavern-summary-list {
+    margin: 0;
+    display: grid;
+    gap: 0;
+}
+
+.tavern-summary-row {
+    padding: 0.72rem 0 0.84rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tavern-summary-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.tavern-summary-row dt {
+    margin-bottom: 0.22rem;
+    color: #e3ccb0;
+    font-family: "Cinzel", serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.tavern-summary-row dd {
+    margin: 0;
+    color: #d6dbe3;
+    line-height: 1.55;
 }
 
 @media (max-width: 920px) {
@@ -463,14 +830,17 @@ h3 {
 
     .hero-section,
     .immersive-section,
+    .page-hero-section,
     .hero-shell,
-    .split-shell {
+    .split-shell,
+    .page-hero-shell {
         min-height: auto;
     }
 
     .hero-copy,
     .section-copy,
-    .overview-shell {
+    .overview-shell,
+    .page-hero-copy {
         padding: 3rem 0;
     }
 
@@ -480,5 +850,67 @@ h3 {
 
     .section-overlay.light {
         background: linear-gradient(180deg, rgba(233, 238, 245, 0.72), rgba(233, 238, 245, 0.88));
+    }
+
+    .tavern-panel-head,
+    .tavern-composer-foot {
+        display: grid;
+    }
+
+    .tavern-shell {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 0 0.6rem;
+    }
+
+    .tavern-chat-panel {
+        min-height: auto;
+    }
+
+    .tavern-sidebar {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "intro"
+            "summary";
+    }
+
+    .tavern-message {
+        max-width: 100%;
+    }
+
+    .tavern-panel-actions {
+        grid-auto-flow: row;
+    }
+
+    .tavern-actions {
+        justify-items: stretch;
+    }
+
+    .tavern-actions .button {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .tavern-transcript {
+        min-height: 25rem;
+        height: auto;
+    }
+
+    .tavern-summary-panel {
+        min-height: auto;
+    }
+
+    .tavern-summary {
+        max-height: none;
+    }
+
+    .tavern-summary-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .tavern-summary-columns::before {
+        display: none;
     }
 }

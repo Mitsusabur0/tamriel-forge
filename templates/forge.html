@@ -1,42 +1,62 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-intro">
-    <p class="kicker">Step 1</p>
-    <h1>Character Forge</h1>
-    <p>Shape the foundations of your character through guided prompts, narrative choices, and world-aware identity building.</p>
-</section>
+<section class="tavern-stage" data-chat-endpoint="{{ url_for('tavern_chat') }}">
+    <div class="tavern-shell">
+        <section class="tavern-chat-panel" aria-label="Character chat">
+            <div class="tavern-panel-head">
+                <div class="tavern-panel-title">
+                    <p class="kicker">Tavern Table</p>
+                    <h1>Conversation</h1>
+                    <p class="tavern-status" data-chat-status>Ready for the first answer.</p>
+                </div>
+                <div class="tavern-actions tavern-panel-actions">
+                    <a class="button secondary" href="{{ url_for('backstory') }}">Visit the Scriptorium</a>
+                    <button class="button" type="button" data-reset-chat>Start a New Character</button>
+                </div>
+            </div>
 
-<section class="panel-grid intake-layout">
-    <div class="info-card">
-        <h2>Prompt flow</h2>
-        <div class="mock-chat">
-            <div class="chat-bubble system">Tell me your character's race, homeland, and the wound that still defines them.</div>
-            <div class="chat-bubble user">A Dunmer exile from Vvardenfell searching for redemption.</div>
-            <div class="chat-bubble system">What faction, oath, or personal code continues to guide them?</div>
-        </div>
-    </div>
+            <div class="tavern-transcript" data-chat-transcript aria-live="polite"></div>
 
-    <div class="card-frame tall">
-        <!-- Character portrait anchor image: right-hand visual on the Character Forge page to set tone while the user fills traits.
-             It should feel like concept art for a player character, waist-up or three-quarter composition.
-             Recommended dimensions: 900x1200 px, fantasy illustration style, dramatic rim light, strong facial readability. -->
-        <img src="{{ url_for('static', filename='images/elder_scrolls/character-anchor-placeholder.avif') }}"
-             alt="Character concept portrait">
-    </div>
-    <div class="info-card">
-        <h2>Captured traits</h2>
-        <ul class="detail-list">
-            <li>Race: Dunmer</li>
-            <li>Birthplace: Vvardenfell</li>
-            <li>Archetype: Blade pilgrim</li>
-            <li>Core conflict: Exile and guilt</li>
-            <li>Faction tie: Tribunal holdouts</li>
-        </ul>
-    </div>
-    <div class="info-card">
-        <h2>Interaction notes</h2>
-        <p>Future versions can deepen the flow with adaptive prompts, lore validation, saved progress, and branching question paths.</p>
+            <form class="tavern-composer" data-chat-form>
+                <label class="sr-only" for="tavern-message">Describe your character</label>
+                <textarea
+                    id="tavern-message"
+                    name="message"
+                    rows="4"
+                    maxlength="3000"
+                    placeholder="Describe your character's people, homeland, wound, ambition, or ask the innkeeper for guidance."
+                    required
+                ></textarea>
+                <div class="tavern-composer-foot">
+                    <p>Press Enter to send. Use Shift+Enter for a new line.</p>
+                    <button class="button primary" type="submit" data-send-button>Send to the Tavern</button>
+                </div>
+            </form>
+        </section>
+
+        <aside class="tavern-sidebar">
+            <section class="tavern-intro-card">
+                <div class="tavern-intro-copy">
+                    <h2>Shape the hero with the innkeeper.</h2>
+                    <p>
+                        Answer in fragments or in full. The tavern will keep a running ledger of confirmed details and
+                        guide the next question toward the most important missing piece.
+                    </p>
+                </div>
+            </section>
+
+            <section class="tavern-summary-panel">
+                <div class="tavern-summary-head">
+                    <h2>Character Summary</h2>
+                </div>
+                <div class="tavern-summary" data-character-summary></div>
+            </section>
+        </aside>
     </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/tavern.js') }}" defer></script>
 {% endblock %}

@@ -1,21 +1,9 @@
-I had a great idea.
+We'll now work on the 'Tavern' section, which is a chat with an LLM, who guides the user in the creation of the character. 
 
-We are going to turn this app into a roleplayed app. 
-Each part of the app, we are going to present it as fantasy themed, in roleplay. 
+Our next task is to change the UI and implement the chat section with an llm. 
+Leave the hero section how it is, we are working on everything below it. 
+Change everything so that it looks good and fits the theme. Use industry standars for how to implement chat's with a GPT model. 
+The model we'll use for this task is the CHAT_MODEL in config.py
+The prompt we'll use for the model is chat_sys_prompt in all_system_prompts.py. This prompt is a placeholder, we'll change it later, once the UI/UX and the connection to the API is all working and in place. 
 
-Something like:
-
-Character forge -> tavern of heroes, in which we discuss the story of our hero, etc.
-Backstory -> monk writers. "Get the latest manuscript oof our monks, etc.
-Portraits -> A painter/artist
-Voice -> The bard's tale
-
-
-These are just quick examples, let's cook something good here. 
-Which fantasy stereotypes would fit each of our sections? Let's lean into them, so it feels relatable to fans of the genre. 
-
--- 
-
-With this in mind, we are going to update our home, so that each section references one of the parts of our app, with this roleplayed theme in mind. 
-
-Now, before starting, i don't know if I've explained myself well. Tell me if you understand what I'm going for here. 
+Ask any clarifying questions before coding.

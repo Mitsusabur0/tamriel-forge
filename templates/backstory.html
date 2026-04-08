@@ -1,39 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-intro">
-    <p class="kicker">Step 2</p>
-    <h1>Backstory</h1>
-    <p>Develop the character's literary origin into a more polished narrative that feels grounded in the world and personal stakes.</p>
+<section class="page-hero-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/manuscript-scene-placeholder.jpg') }}"
+         alt="Backstory manuscript ambience">
+    <div class="section-overlay light"></div>
+    <div class="section-shell page-hero-shell page-hero-shell-right">
+        <div class="page-hero-copy page-hero-copy-light">
+            <p class="kicker">Monks' Scriptorium</p>
+            <h1>Bring the fragments of a life to the long tables,</h1>
+            <p class="page-subhead">and the scribes will return a history fit for vellum.</p>
+            <p class="lede">
+                The brothers of this chamber are masters of turning scraps, vows, tragedies, and whispered details
+                into a proper chronicle. They do not merely write. They arrange memory into something that can endure.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="panel-grid story-layout">
     <article class="info-card prose-card">
-        <h2>Narrative preview</h2>
+        <h2>The latest manuscript</h2>
         <p>
             Born beneath the red glow of Vvardenfell, the exile learned early that ash remembers every trespass.
             One day the road ahead would carry him from temple shadow to border ruins, where every vow would be tested again.
         </p>
         <p>
-            This panel is where the final written origin, shaped by the character profile and lore context,
-            will appear as a more complete and expressive story.
+            The scribes have given the tale shape, weight, and cadence, so that what began as a handful of hard facts
+            now reads like a life somebody actually had to survive.
         </p>
     </article>
 
     <aside class="card-frame">
-        <!-- Manuscript support image: narrow artwork beside the prose panel on the Backstory page.
-             It should reinforce the literary tone with Elder Scrolls ambience such as candles, tomes, or ancestral halls.
-             Recommended dimensions: 1000x1400 px, vertical composition, warm interior lighting, textured and contemplative feel. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/manuscript-scene-placeholder.jpg') }}"
              alt="Backstory manuscript ambience">
     </aside>
     <article class="info-card">
-        <h2>Planned controls</h2>
+        <h2>Requests the monks accept</h2>
         <ul class="detail-list">
-            <li>Regenerate tone</li>
-            <li>Shift point of view</li>
-            <li>Expand the childhood arc</li>
-            <li>Export as a character sheet</li>
+            <li>Sharpen the tragedy</li>
+            <li>Tell it from another witness</li>
+            <li>Unroll the childhood years</li>
+            <li>Prepare a clean copy for the road</li>
         </ul>
     </article>
 </section>

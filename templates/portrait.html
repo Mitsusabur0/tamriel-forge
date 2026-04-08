@@ -1,30 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-intro">
-    <p class="kicker">Step 3</p>
-    <h1>Portrait Gallery</h1>
-    <p>Review the visual directions for your character and compare different moods, poses, and presentation styles.</p>
+<section class="page-hero-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/portrait-primary-placeholder.jpg') }}"
+         alt="Primary character portrait">
+    <div class="section-overlay"></div>
+    <div class="section-shell page-hero-shell">
+        <div class="page-hero-copy">
+            <p class="kicker">Painters' Atelier</p>
+            <h1>When memory needs a face,</h1>
+            <p class="page-subhead">the artists of this house will set it upon canvas.</p>
+            <p class="lede">
+                These painters work in ash tones, moonlit silvers, battle reds, and royal golds. Give them a hero,
+                and they will decide whether the world should meet a saint, a sellsword, or a storm with boots on.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="panel-grid gallery-layout">
     <div class="card-frame">
-        <!-- Primary portrait image: first gallery slot on the Portrait page for the best final character render.
-             It should present the character clearly and heroically as the main deliverable image.
-             Recommended dimensions: 1024x1536 px, polished fantasy illustration, crisp focal point, premium key art feel. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-primary-placeholder.jpg') }}"
              alt="Primary character portrait">
     </div>
     <div class="card-frame">
-        <!-- Alternate portrait image: second gallery slot on the Portrait page for a stylistic or pose variation.
-             It should feel related to the main portrait while offering a different mood or camera angle.
-             Recommended dimensions: 1024x1536 px, same character identity, cooler lighting or alternate background. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/portrait-variant-placeholder.jpg') }}"
              alt="Alternate character portrait">
     </div>
     <article class="info-card">
-        <h2>Art direction panel</h2>
-        <p>Future controls can support aspect ratio changes, prompt refinement, reroll history, and favorite selection.</p>
+        <h2>Notes from the studio</h2>
+        <p>
+            One canvas catches the hero at their most iconic, the other tests a different mood, light, or posture.
+            The painters keep both at hand until you decide which likeness deserves to travel the realm.
+        </p>
     </article>
 </section>
 {% endblock %}

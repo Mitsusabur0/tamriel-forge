@@ -8,21 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block extra_head %}{% endblock %}
 </head>
-<body>
+<body class="{{ active_page ~ '-page' if active_page else '' }}">
     <header class="site-header">
         <div class="site-header-inner">
             <div class="brand-block">
-                <p class="eyebrow">Lore-guided character creation</p>
+                <p class="eyebrow">A quarter of legends and ink</p>
                 <a class="brand" href="{{ url_for('home') }}">TamrielForge</a>
             </div>
             <nav class="main-nav" aria-label="Primary">
-                <a class="{{ 'active' if active_page == 'home' else '' }}" href="{{ url_for('home') }}">Overview</a>
-                <a class="{{ 'active' if active_page == 'forge' else '' }}" href="{{ url_for('forge') }}">Character Forge</a>
-                <a class="{{ 'active' if active_page == 'backstory' else '' }}" href="{{ url_for('backstory') }}">Backstory</a>
-                <a class="{{ 'active' if active_page == 'portrait' else '' }}" href="{{ url_for('portrait') }}">Portraits</a>
-                <a class="{{ 'active' if active_page == 'voice' else '' }}" href="{{ url_for('voice') }}">Voice</a>
-                <a class="{{ 'active' if active_page == 'lore_atlas' else '' }}" href="{{ url_for('lore_atlas') }}">Lore Atlas</a>
+                <a class="{{ 'active' if active_page == 'home' else '' }}" href="{{ url_for('home') }}">Gatehouse</a>
+                <a class="{{ 'active' if active_page == 'forge' else '' }}" href="{{ url_for('forge') }}">Tavern</a>
+                <a class="{{ 'active' if active_page == 'backstory' else '' }}" href="{{ url_for('backstory') }}">Scriptorium</a>
+                <a class="{{ 'active' if active_page == 'portrait' else '' }}" href="{{ url_for('portrait') }}">Atelier</a>
+                <a class="{{ 'active' if active_page == 'voice' else '' }}" href="{{ url_for('voice') }}">Bards' Hall</a>
+                <a class="{{ 'active' if active_page == 'lore_atlas' else '' }}" href="{{ url_for('lore_atlas') }}">Atlas</a>
             </nav>
         </div>
     </header>
@@ -30,5 +31,6 @@
     <main class="site-main">
         {% block content %}{% endblock %}
     </main>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

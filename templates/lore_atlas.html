@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-intro">
-    <p class="kicker">Reference</p>
-    <h1>Lore Atlas</h1>
-    <p>Browse the places, peoples, factions, and historical context that can anchor each character more firmly in the world.</p>
+<section class="page-hero-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/tamriel-map-placeholder.webp') }}"
+         alt="Map of Tamriel">
+    <div class="section-overlay light"></div>
+    <div class="section-shell page-hero-shell">
+        <div class="page-hero-copy page-hero-copy-light">
+            <p class="kicker">Atlas of Realms</p>
+            <h1>When the story needs firmer ground,</h1>
+            <p class="page-subhead">the archivists will unfold the world before you.</p>
+            <p class="lede">
+                Here lie maps, dynasties, faction rolls, border feuds, and the old names of roads now swallowed by dust.
+                Whenever a hero needs roots, the archive provides them.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="panel-grid atlas-layout">
     <div class="card-frame wide">
-        <!-- Tamriel map image: central visual on the Lore Atlas page to anchor the lore-reference experience.
-             It should function like a broad world map or regional chart that suggests navigation and discovery.
-             Recommended dimensions: 1600x1000 px, parchment texture, high readability, cartographic fantasy feel. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/tamriel-map-placeholder.webp') }}"
              alt="Map of Tamriel">
     </div>
     <article class="info-card">
-        <h2>Reference panels</h2>
+        <h2>Cabinets of knowledge</h2>
         <ul class="detail-list">
             <li>Races and cultures</li>
             <li>Factions and creeds</li>
@@ -25,8 +33,11 @@
         </ul>
     </article>
     <article class="info-card">
-        <h2>Role in the app</h2>
-        <p>This area can surface lore excerpts, concise summaries, and supporting references while the user builds a character.</p>
+        <h2>A word from the archivists</h2>
+        <p>
+            If a place name is uncertain, a creed half-remembered, or an old conflict needed to sharpen your hero's place in time,
+            this is where the dust-covered answers wait.
+        </p>
     </article>
 </section>
 {% endblock %}

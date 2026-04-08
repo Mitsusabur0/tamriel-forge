@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-intro">
-    <p class="kicker">Step 4</p>
-    <h1>Voice Narration</h1>
-    <p>Present the character through spoken storytelling, with room for pacing, tone, and atmosphere.</p>
+<section class="page-hero-section home-image-section">
+    <img class="section-background" src="{{ url_for('static', filename='images/elder_scrolls/narration-ambience-placeholder.jpg') }}"
+         alt="Narration ambience scene">
+    <div class="section-overlay"></div>
+    <div class="section-shell page-hero-shell page-hero-shell-right">
+        <div class="page-hero-copy">
+            <p class="kicker">Bards' Hall</p>
+            <h1>Set the tale before the minstrels,</h1>
+            <p class="page-subhead">and they will send it back to you with breath, thunder, and a little mischief.</p>
+            <p class="lede">
+                Some voices arrive like a campfire confession. Others strike like a herald on the city steps.
+                The bards know the difference, and each retelling gives your hero a little more life in the room.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="panel-grid voice-layout">
     <article class="info-card">
-        <h2>Playback preview</h2>
+        <h2>The hall rehearses</h2>
         <div class="audio-shell">
             <div class="audio-bar"></div>
             <div class="audio-meta">
@@ -17,23 +28,22 @@
                 <span>03:47</span>
             </div>
         </div>
-        <p>This panel will hold the narration playback experience once voice generation is connected.</p>
+        <p>
+            Listen closely. This is where the voice of your legend gathers pace, weight, and echo before it is loosed upon the hall.
+        </p>
     </article>
 
     <div class="card-frame">
-        <!-- Narration ambience image: supporting visual on the Voice page to evoke spoken legend or bardic storytelling.
-             It should feel atmospheric rather than character-focused, with room for the audio controls nearby.
-             Recommended dimensions: 1400x900 px, moody tavern or hall scene, amber light, storybook atmosphere. -->
         <img src="{{ url_for('static', filename='images/elder_scrolls/narration-ambience-placeholder.jpg') }}"
              alt="Narration ambience scene">
     </div>
     <article class="info-card">
-        <h2>Planned options</h2>
+        <h2>What the bards can vary</h2>
         <ul class="detail-list">
-            <li>Voice style selection</li>
-            <li>Reading pace control</li>
-            <li>Ambient music toggle</li>
-            <li>Narration download</li>
+            <li>A gentler or sterner voice</li>
+            <li>The tempo of the telling</li>
+            <li>Music beneath the verses</li>
+            <li>A copy fit to carry away</li>
         </ul>
     </article>
 </section>
